@@ -6,7 +6,7 @@
       <template #content>
         <div class="about-content">
           <div class="profile-image">
-            <img src="../assets/profile.jpg" alt="Profile photo" />
+            <img src="../assets/profile.jpeg" alt="Profile photo" />
           </div>
           <div class="about-info">
             <p class="about-intro">
