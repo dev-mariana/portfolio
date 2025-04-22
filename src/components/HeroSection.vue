@@ -1,18 +1,22 @@
-<!-- components/HeroSection.vue -->
 <template>
   <section class="hero-section">
     <div class="hero-content">
       <h1>Hello, I'm <span class="highlight">Mariana</span>.</h1>
-      <p class="subtitle">Full Stack Developer & UI Enthusiast</p>
+      <p class="subtitle">Software Engineer - Back-End</p>
       <p class="description">
-        Crafting elegant solutions to complex problems with clean code and
-        thoughtful design.
+        I architect and implement backend systems with a focus on clean code,
+        scalability, and engineering best practices.
       </p>
       <div class="cta-buttons">
-        <Button label="View My Work" class="p-button-success" />
+        <Button
+          label="Projects"
+          class="p-button-success view-work-btn"
+          @click="navigateToProjects"
+        />
         <Button
           label="Contact Me"
-          class="p-button-outlined p-button-success ml-2"
+          class="p-button-outlined contact-btn"
+          @click="navigateToContact"
         />
       </div>
       <div class="scroll-indicator">
@@ -24,16 +28,35 @@
 
 <script setup lang="ts">
 import Button from "primevue/button";
+
+const navigateToProjects = () => {
+  const projectsSection = document.getElementById("projects");
+
+  if (projectsSection) {
+    projectsSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
+
+const navigateToContact = () => {
+  const contactSection = document.getElementById("contact");
+
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
 </script>
 
 <style scoped>
 .hero-section {
-  height: 100vh;
+  height: 90vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
-  padding: 0 1rem;
+  padding: 8rem 1rem 0;
 }
 
 .hero-content {
@@ -62,12 +85,47 @@ h1 {
 }
 
 .cta-buttons {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.view-work-btn {
+  min-width: 120px;
+  background-color: #4ade80 !important;
+  border: none !important;
+  color: #000000 !important;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+}
+
+.view-work-btn:hover {
+  background-color: #22c55e !important;
+}
+
+.contact-btn {
+  min-width: 120px;
+  background-color: transparent !important;
+  border: 1px solid #4ade80 !important;
+  color: #4ade80 !important;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+}
+
+.contact-btn:hover {
+  background-color: rgba(74, 222, 128, 0.1) !important;
 }
 
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
+  top: 36rem;
+  left: 50%;
+  transform: translateX(-50%);
   animation: bounce 2s infinite;
 }
 
