@@ -1,4 +1,3 @@
-<!-- components/SkillsSection.vue -->
 <template>
   <section id="skills" class="skills-section">
     <h2>Skills & Expertise</h2>
@@ -29,25 +28,27 @@ interface Skill {
 
 const skills = ref<Skill[]>([
   {
-    title: "Frontend Development",
-    icon: "pi pi-desktop",
-    items: [
-      "HTML / CSS",
-      "JavaScript / TypeScript",
-      "Vue.js / Nuxt.js",
-      "React / Redux",
-      "Responsive Design",
-    ],
-  },
-  {
     title: "Backend Development",
     icon: "pi pi-server",
     items: [
-      "Node.js / Express",
-      "MongoDB / PostgreSQL",
+      "Node.js",
+      "Nest.js / Fastify / Express",
+      "PostgreSQL / MySQL / Redis",
       "RESTful APIs",
-      "GraphQL / Apollo",
-      "Authentication Systems",
+      "GraphQL",
+      "Java / Spring Boot",
+      "Golang",
+    ],
+  },
+  {
+    title: "Frontend Development",
+    icon: "pi pi-desktop",
+    items: [
+      "HTML / CSS / SCSS",
+      "JavaScript / TypeScript",
+      "Angular",
+      "Vue.js / Nuxt.js",
+      "Responsive Design",
     ],
   },
   {
@@ -55,44 +56,23 @@ const skills = ref<Skill[]>([
     icon: "pi pi-cog",
     items: [
       "Git / GitHub",
+      "GitLab / Bitbucket",
       "Jest / Vitest",
+      "Mocha / Chai",
       "CI/CD Pipelines",
-      "Docker / Kubernetes",
+      "Docker",
       "AWS / Azure",
-    ],
-  },
-  {
-    title: "UI/UX Design",
-    icon: "pi pi-pencil",
-    items: [
-      "Figma / Sketch",
-      "User Research",
-      "Wireframing",
-      "Prototyping",
-      "Accessibility",
     ],
   },
   {
     title: "Mobile Development",
     icon: "pi pi-mobile",
-    items: [
-      "React Native",
-      "Flutter",
-      "Progressive Web Apps",
-      "iOS / Android",
-      "Responsive Layouts",
-    ],
+    items: ["Ionic", "Java / Kotlin (Android)", "Responsive Layouts"],
   },
   {
     title: "Project Management",
     icon: "pi pi-chart-bar",
-    items: [
-      "Agile / Scrum",
-      "Jira / Trello",
-      "Team Leadership",
-      "Sprint Planning",
-      "Requirement Analysis",
-    ],
+    items: ["Scrum", "Kanban", "Jira", "Trello", "ClickUp"],
   },
 ]);
 </script>
