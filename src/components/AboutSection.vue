@@ -1,4 +1,3 @@
-<!-- components/AboutSection.vue -->
 <template>
   <section id="about" class="about-section">
     <h2>About Me</h2>
@@ -10,25 +9,23 @@
           </div>
           <div class="about-info">
             <p class="about-intro">
-              I'm a passionate full-stack developer and specialist in creating
-              responsive web applications. I've been trained in computer
-              science, focusing on web technologies like JS, TS, and Vue.js.
-            </p>
-            <p>
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open-source, or helping others learn to code.
+              I'm a software developer with over 6 years of experience,
+              currently focused on backend development. I specialize in building
+              reliable and scalable APIs with Node.js, TypeScript, and NestJS.
+              My background in frontend helps me understand full-stack needs and
+              collaborate efficiently with product teams.
             </p>
             <ul class="skill-list">
               <li><i class="pi pi-check"></i> JavaScript/TypeScript</li>
-              <li><i class="pi pi-check"></i> React/Redux</li>
-              <li><i class="pi pi-check"></i> Vue.js/Vuex</li>
-              <li><i class="pi pi-check"></i> Node.js/Express</li>
-              <li><i class="pi pi-check"></i> UI/UX Design</li>
+              <li><i class="pi pi-check"></i> Node.js</li>
+              <li><i class="pi pi-check"></i> Angular</li>
+              <li><i class="pi pi-check"></i> Vue.js</li>
             </ul>
             <Button
-              label="View Full Resume"
+              label="Resume"
               icon="pi pi-file"
               class="p-button-success"
+              @click="downloadCV"
             />
           </div>
         </div>
@@ -40,6 +37,11 @@
 <script setup lang="ts">
 import Button from "primevue/button";
 import Card from "primevue/card";
+import resume from "../assets/resume.pdf";
+
+const downloadCV = () => {
+  window.open(resume, "_blank");
+};
 </script>
 
 <style scoped>
