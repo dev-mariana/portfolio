@@ -1,4 +1,3 @@
-<!-- components/ProjectsSection.vue -->
 <template>
   <section id="projects" class="projects-section">
     <h2>Featured Projects</h2>
@@ -23,13 +22,9 @@
           <div class="project-links">
             <Button
               label="View Details"
-              icon="pi pi-external-link"
-              class="p-button-sm p-button-success"
-            />
-            <Button
-              label="Source Code"
               icon="pi pi-github"
-              class="p-button-sm p-button-outlined p-button-success ml-2"
+              class="p-button-sm p-button-success"
+              @click="openLink(project.repoUrl)"
             />
           </div>
         </template>
@@ -51,40 +46,69 @@ import Button from "primevue/button";
 import Card from "primevue/card";
 import { ref } from "vue";
 
+const openLink = (url: string) => {
+  window.open(url, "_blank");
+};
+
 interface Project {
   id: number;
   title: string;
   description: string;
   image: string;
   technologies: string[];
+  repoUrl: string;
 }
 
 const projects = ref<Project[]>([
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "Tax ID Benefits Lookup",
     description:
-      "Complete e-commerce solution with product management, user authentication, and payment processing.",
+      "A simple app to search and display benefits linked to a tax ID (CPF) using an external API.",
     image:
-      "https://placehold.co/600x400/1e1e1e/4ade80?text=E-commerce+Platform",
-    technologies: ["Vue.js", "Node.js", "MongoDB"],
+      "https://miro.medium.com/v2/resize:fit:1400/1*5tJzgSzvi7xff-gmFGoxJw.png",
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "Fastify",
+      "Redis",
+      "Elasticsearch",
+      "Docker",
+    ],
+    repoUrl: "https://github.com/dev-mariana/konsi",
   },
   {
     id: 2,
-    title: "Real-time Chat App",
+    title: "Banking Transactions System",
     description:
-      "Instant messaging application with real-time updates, user presence, and channel management.",
-    image: "https://placehold.co/600x400/1e1e1e/4ade80?text=Chat+App",
-    technologies: ["Vue.js", "Socket.io", "Express"],
+      "A basic banking system for managing accounts and transactions.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAlm-KNR2iFOFp6Jnvh7pWqVIBroMLSGmvYQ&s",
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "Fastify",
+      "Prisma",
+      "PostgreSQL",
+      "Docker",
+    ],
+    repoUrl: "https://github.com/dev-mariana/grupo-primo",
   },
   {
     id: 3,
-    title: "Analytics Dashboard",
+    title: "Users' Repositories Search",
     description:
-      "Interactive data visualization dashboard with customizable widgets and real-time analytics.",
+      "A simple frontend application that searches users' repositories on GitHub.",
     image:
-      "https://placehold.co/600x400/1e1e1e/4ade80?text=Analytics+Dashboard",
-    technologies: ["Vue.js", "D3.js", "Firebase"],
+      "https://www.aceinfoway.com/blog/wp-content/uploads/2020/05/Latest-Features-in-Angular-10.jpg",
+    technologies: [
+      "Angular 10",
+      "TypeScript",
+      "HTML5",
+      "SCSS",
+      "Angular Material",
+    ],
+    repoUrl: "https://github.com/dev-mariana/desafio-coopersystem",
   },
 ]);
 </script>
@@ -127,8 +151,9 @@ h2 {
 }
 
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #ffffff;
+  text-align: center;
 }
 
 .project-desc {
@@ -153,6 +178,7 @@ h2 {
 
 .project-links {
   display: flex;
+  justify-content: center;
   margin-top: 1rem;
 }
 
