@@ -29,34 +29,29 @@
 <script setup lang="ts">
 import Button from "primevue/button";
 
-const navigateToProjects = () => {
-  const projectsSection = document.getElementById("projects");
+const scrollToSection = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
 
-  if (projectsSection) {
-    projectsSection.scrollIntoView({
+  if (section) {
+    section.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   }
 };
 
-const navigateToContact = () => {
-  const contactSection = document.getElementById("contact");
-
-  if (contactSection) {
-    contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-};
+const navigateToProjects = () => scrollToSection("projects");
+const navigateToContact = () => scrollToSection("contact");
 </script>
 
 <style scoped>
 .hero-section {
-  height: 90vh;
+  height: 50vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   text-align: center;
-  padding: 8rem 1rem 0;
+  padding: 6rem 1rem 0;
 }
 
 .hero-content {
@@ -69,7 +64,7 @@ h1 {
 }
 
 .highlight {
-  color: #4ade80;
+  color: var(--primary-color);
 }
 
 .subtitle {
@@ -93,7 +88,7 @@ h1 {
 
 .view-work-btn {
   min-width: 120px;
-  background-color: #4ade80 !important;
+  background-color: var(--primary-color) !important;
   border: none !important;
   color: #000000 !important;
   font-weight: 500;
@@ -109,8 +104,8 @@ h1 {
 .contact-btn {
   min-width: 120px;
   background-color: transparent !important;
-  border: 1px solid #4ade80 !important;
-  color: #4ade80 !important;
+  border: 1px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
   font-weight: 500;
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
@@ -131,7 +126,7 @@ h1 {
 
 .scroll-indicator i {
   font-size: 1.5rem;
-  color: #4ade80;
+  color: var(--primary-color);
 }
 
 @keyframes bounce {
