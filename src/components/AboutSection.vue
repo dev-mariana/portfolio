@@ -22,7 +22,7 @@
               <li><i class="pi pi-check"></i> Vue.js</li>
             </ul>
             <Button
-              label="Resume"
+              label="Download Resume"
               icon="pi pi-file"
               class="p-button-success"
               @click="downloadCV"
