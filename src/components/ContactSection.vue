@@ -219,7 +219,7 @@ const submitForm = async () => {
 const sendEmail = async (form: FormData) => {
   init("9Z7eXTAX2xtMzyaa5");
 
-  await send("service_ts9vnell", "template_9mx1kbb", {
+  await send("service_ts9vnel", "template_9mx1kbb", {
     name: form.name,
     email: form.email,
     subject: form.subject,
