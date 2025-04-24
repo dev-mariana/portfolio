@@ -217,9 +217,13 @@ const submitForm = async () => {
 };
 
 const sendEmail = async (form: FormData) => {
-  init("9Z7eXTAX2xtMzyaa5");
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const serviceId = import.meta.env.VITE_SERVICE_ID;
+  const templateId = import.meta.env.VITE_TEMPLATE_ID;
 
-  await send("service_ts9vnel", "template_9mx1kbb", {
+  init(apiKey);
+
+  await send(serviceId, templateId, {
     name: form.name,
     email: form.email,
     subject: form.subject,
