@@ -1,4 +1,3 @@
-<!-- components/ContactSection.vue -->
 <template>
   <section id="contact" class="contact-section">
     <h2>Get In Touch</h2>
@@ -7,26 +6,48 @@
         <Card>
           <template #content>
             <h3>Contact Information</h3>
-            <div class="info-item">
-              <i class="pi pi-envelope"></i>
-              <span>example@example.com</span>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="pi pi-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Email</h4>
+                  <a href="mailto:m.b.rodrigues1998@gmail.com"
+                    >m.b.rodrigues1998@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="pi pi-map-marker"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Location</h4>
+                  <p>Brazil</p>
+                </div>
+              </div>
             </div>
-            <div class="info-item">
-              <i class="pi pi-phone"></i>
-              <span>+1 (555) 123-4567</span>
-            </div>
-            <div class="info-item">
-              <i class="pi pi-map-marker"></i>
-              <span>San Francisco, CA</span>
-            </div>
-            <h3>Connect With Me</h3>
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="pi pi-facebook"></i></a>
-              <a href="#" class="social-link"><i class="pi pi-twitter"></i></a>
-              <a href="#" class="social-link"><i class="pi pi-linkedin"></i></a>
-              <a href="#" class="social-link"
-                ><i class="pi pi-instagram"></i
-              ></a>
+            <div class="social-section">
+              <h4>Connect with me</h4>
+              <div class="social-links">
+                <a
+                  href="https://www.linkedin.com/in/dev-mariana/"
+                  target="_blank"
+                  class="social-link"
+                  title="LinkedIn"
+                >
+                  <i class="pi pi-linkedin"></i>
+                </a>
+                <a
+                  href="https://github.com/dev-mariana"
+                  target="_blank"
+                  class="social-link"
+                  title="GitHub"
+                >
+                  <i class="pi pi-github"></i>
+                </a>
+              </div>
             </div>
           </template>
         </Card>
@@ -34,65 +55,69 @@
       <div class="contact-form">
         <Card>
           <template #content>
-            <h3>Send Me a Message</h3>
+            <h3 class="text-center">Send Me a Message</h3>
             <form @submit.prevent="submitForm">
-              <span class="p-float-label mb-4">
+              <div class="form-group mb-4">
+                <label for="name">Name</label>
                 <InputText
                   id="name"
                   v-model="form.name"
                   :class="{ 'p-invalid': errors.name }"
                   class="w-full"
+                  placeholder="Your name"
                 />
-                <label for="name">Your Name</label>
-              </span>
-              <small v-if="errors.name" class="error-text">{{
-                errors.name
-              }}</small>
+                <small v-if="errors.name" class="error-text">{{
+                  errors.name
+                }}</small>
+              </div>
 
-              <span class="p-float-label mb-4">
+              <div class="form-group mb-4">
+                <label for="email">Email</label>
                 <InputText
                   id="email"
                   v-model="form.email"
                   :class="{ 'p-invalid': errors.email }"
                   class="w-full"
+                  placeholder="your@email.com"
                 />
-                <label for="email">Email Address</label>
-              </span>
-              <small v-if="errors.email" class="error-text">{{
-                errors.email
-              }}</small>
+                <small v-if="errors.email" class="error-text">{{
+                  errors.email
+                }}</small>
+              </div>
 
-              <span class="p-float-label mb-4">
+              <div class="form-group mb-4">
+                <label for="subject">Subject</label>
                 <InputText
                   id="subject"
                   v-model="form.subject"
                   :class="{ 'p-invalid': errors.subject }"
                   class="w-full"
+                  placeholder="Subject"
                 />
-                <label for="subject">Subject</label>
-              </span>
-              <small v-if="errors.subject" class="error-text">{{
-                errors.subject
-              }}</small>
+                <small v-if="errors.subject" class="error-text">{{
+                  errors.subject
+                }}</small>
+              </div>
 
-              <span class="p-float-label mb-4">
+              <div class="form-group mb-4">
+                <label for="message">Message</label>
                 <Textarea
                   id="message"
                   v-model="form.message"
                   :class="{ 'p-invalid': errors.message }"
                   rows="5"
                   class="w-full"
+                  placeholder="Your message..."
                 />
-                <label for="message">Your Message</label>
-              </span>
-              <small v-if="errors.message" class="error-text">{{
-                errors.message
-              }}</small>
+                <small v-if="errors.message" class="error-text">{{
+                  errors.message
+                }}</small>
+              </div>
 
               <Button
                 type="submit"
                 label="Send Message"
-                class="p-button-success w-full"
+                class="p-button-success w-full submit-button"
               />
             </form>
           </template>
@@ -219,23 +244,69 @@ h3 {
   color: #ffffff;
 }
 
-.info-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+.contact-details {
+  margin-bottom: 2rem;
 }
 
-.info-item i {
-  font-size: 1.25rem;
-  color: #4ade80;
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #2a2a2a;
+  border-radius: 50%;
   margin-right: 1rem;
-  width: 24px;
+  flex-shrink: 0;
+}
+
+.contact-icon i {
+  color: #4ade80;
+  font-size: 1.25rem;
+}
+
+.contact-text h4 {
+  margin: 0 0 0.25rem 0;
+  color: #4ade80;
+  font-size: 1rem;
+}
+
+.contact-text a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-text a:hover {
+  color: #4ade80;
+}
+
+.contact-text p {
+  margin: 0;
+  color: #ffffff;
+}
+
+.social-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #2a2a2a;
+}
+
+.social-section h4 {
+  margin: 0 0 1rem 0;
+  color: #4ade80;
+  font-size: 1rem;
 }
 
 .social-links {
   display: flex;
   gap: 1rem;
-  margin-top: 1.5rem;
 }
 
 .social-link {
@@ -248,6 +319,7 @@ h3 {
   border-radius: 50%;
   color: #ffffff;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .social-link:hover {
@@ -262,6 +334,19 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
 .mb-4 {
   margin-bottom: 1.5rem;
   display: block;
@@ -271,9 +356,27 @@ h3 {
   width: 100%;
 }
 
+.submit-button {
+  border-radius: 8px !important;
+}
+
+:deep(textarea) {
+  background: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
 @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
   }
+}
+
+.text-center {
+  text-align: center;
+}
+
+:deep(.p-inputtext),
+:deep(.p-inputtextarea) {
+  padding: 0.75rem 1rem !important;
 }
 </style>
