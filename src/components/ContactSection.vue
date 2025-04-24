@@ -109,7 +109,7 @@
                   class="w-full"
                   placeholder="Your message..."
                 />
-                <small v-if="errors.message" class="error-text">{{
+                <small v-if="errors.message" class="error-textarea">{{
                   errors.message
                 }}</small>
               </div>
@@ -120,6 +120,9 @@
                 class="p-button-success w-full submit-button"
               />
             </form>
+            <div class="toast-success">
+              <Toast />
+            </div>
           </template>
         </Card>
       </div>
@@ -128,10 +131,13 @@
 </template>
 
 <script setup lang="ts">
+import { init, send } from "@emailjs/browser";
+import { useToast } from "primevue";
 import Button from "primevue/button";
 import Card from "primevue/card";
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
+import Toast from "primevue/toast";
 import { reactive } from "vue";
 
 interface FormData {
@@ -156,6 +162,7 @@ const form = reactive<FormData>({
 });
 
 const errors = reactive<FormErrors>({});
+const toast = useToast();
 
 const validateEmail = (email: string): boolean => {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -165,7 +172,6 @@ const validateEmail = (email: string): boolean => {
 const validateForm = (): boolean => {
   let isValid = true;
 
-  // Reset errors
   errors.name = undefined;
   errors.email = undefined;
   errors.subject = undefined;
@@ -197,17 +203,46 @@ const validateForm = (): boolean => {
   return isValid;
 };
 
-const submitForm = () => {
+const submitForm = async () => {
   if (validateForm()) {
-    // Here you would typically send the form data to a server
+    await sendEmail(form);
+
     console.log("Form submitted:", form);
 
-    // Reset form
     form.name = "";
     form.email = "";
     form.subject = "";
     form.message = "";
   }
+};
+
+const sendEmail = async (form: FormData) => {
+  init("9Z7eXTAX2xtMzyaa5");
+
+  await send("service_ts9vnell", "template_9mx1kbb", {
+    name: form.name,
+    email: form.email,
+    subject: form.subject,
+    message: form.message,
+  })
+    .then((response) => {
+      toast.add({
+        severity: "success",
+        summary: "Success",
+        detail: "Your message was sent!",
+      });
+
+      console.log("Email sent successfully:", response);
+    })
+    .catch((error) => {
+      toast.add({
+        severity: "error",
+        summary: "Error",
+        detail: "Failed to send email. Please try again later.",
+      });
+
+      console.error("Error sending email:", error);
+    });
 };
 </script>
 
@@ -330,7 +365,14 @@ h3 {
 .error-text {
   color: #ff6b6b;
   display: block;
-  margin-top: -0.5rem;
+  margin-top: 4px;
+  margin-bottom: 1rem;
+}
+
+.error-textarea {
+  color: #ff6b6b;
+  display: block;
+  margin-top: 0px;
   margin-bottom: 1rem;
 }
 
@@ -356,6 +398,10 @@ h3 {
   width: 100%;
 }
 
+:deep(.p-inputtext) {
+  margin-top: 6px;
+}
+
 .submit-button {
   border-radius: 8px !important;
 }
@@ -363,6 +409,7 @@ h3 {
 :deep(textarea) {
   background: #2a2a2a !important;
   color: #ffffff !important;
+  margin-top: 6px;
 }
 
 @media (max-width: 768px) {

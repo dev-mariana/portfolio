@@ -1,4 +1,3 @@
-<!-- components/Navbar.vue -->
 <template>
   <header class="navbar">
     <div class="logo">
