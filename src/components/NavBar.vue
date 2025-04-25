@@ -5,7 +5,7 @@
     </div>
     <button
       class="hamburger"
-      @click="openMenu"
+      @click="toggleMenu"
       :aria-expanded="isMenuOpen"
       aria-label="Toggle navigation"
     >
@@ -68,6 +68,16 @@ const openMenu = () => {
 
 const closeMenu = () => {
   isMenuOpen.value = false;
+};
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+
+  if (isMenuOpen.value) {
+    setTimeout(() => {
+      menuRef.value?.focus();
+    }, 100);
+  }
 };
 
 const handleKeydown = (e: KeyboardEvent) => {
