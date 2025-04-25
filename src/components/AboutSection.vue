@@ -46,7 +46,7 @@ const downloadCV = () => {
 
 <style scoped>
 .about-section {
-  padding: 5rem 2rem;
+  padding: 1rem 2rem 8rem 2rem;
   background-color: #121212;
 }
 
@@ -71,6 +71,7 @@ h2 {
 
 .profile-image {
   flex: 0 0 40%;
+  margin-top: 1rem;
 }
 
 .profile-image img {
@@ -109,6 +110,10 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  .about-section {
+    margin-top: 8rem;
+  }
+
   .about-content {
     flex-direction: column;
   }
