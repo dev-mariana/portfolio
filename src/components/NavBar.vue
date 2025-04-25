@@ -59,13 +59,6 @@ const checkMobile = () => {
   isMobile.value = window.innerWidth <= 900;
 };
 
-const openMenu = () => {
-  isMenuOpen.value = true;
-  setTimeout(() => {
-    menuRef.value?.focus();
-  }, 100);
-};
-
 const closeMenu = () => {
   isMenuOpen.value = false;
 };
