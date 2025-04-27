@@ -133,11 +133,6 @@
 <script setup lang="ts">
 import { init, send } from "@emailjs/browser";
 import { useToast } from "primevue";
-import Button from "primevue/button";
-import Card from "primevue/card";
-import InputText from "primevue/inputtext";
-import Textarea from "primevue/textarea";
-import Toast from "primevue/toast";
 import { reactive } from "vue";
 
 interface FormData {
