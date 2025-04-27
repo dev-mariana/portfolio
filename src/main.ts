@@ -12,7 +12,7 @@ import ptbr from "./locales/pt-br.json";
 const i18n = createI18n({
   legacy: false,
   locale: "pt-br",
-  fallbackLocale: "pt-br",
+  fallbackLocale: "en",
   messages: {
     "pt-br": ptbr,
     en,
