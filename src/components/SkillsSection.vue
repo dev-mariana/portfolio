@@ -1,12 +1,12 @@
 <template>
   <section id="skills" class="skills-section">
-    <h2>Skills & Expertise</h2>
+    <h2>{{ $t("skills.title") }}</h2>
     <div class="skills-grid">
       <div v-for="(skill, index) in skills" :key="index" class="skill-card">
         <div class="skill-icon">
           <i :class="skill.icon"></i>
         </div>
-        <h3>{{ skill.title }}</h3>
+        <h3>{{ $t("skills.list." + skill.key) }}</h3>
         <ul>
           <li v-for="(item, i) in skill.items" :key="i">
             <i class="pi pi-check"></i> {{ item }}
@@ -21,14 +21,14 @@
 import { ref } from "vue";
 
 interface Skill {
-  title: string;
+  key: string;
   icon: string;
   items: string[];
 }
 
 const skills = ref<Skill[]>([
   {
-    title: "Backend Development",
+    key: "backend",
     icon: "pi pi-server",
     items: [
       "Node.js",
@@ -41,7 +41,7 @@ const skills = ref<Skill[]>([
     ],
   },
   {
-    title: "Frontend Development",
+    key: "frontend",
     icon: "pi pi-desktop",
     items: [
       "HTML / CSS / SCSS",
@@ -52,7 +52,7 @@ const skills = ref<Skill[]>([
     ],
   },
   {
-    title: "Tools & Testing",
+    key: "tools",
     icon: "pi pi-cog",
     items: [
       "Git / GitHub",
@@ -65,12 +65,12 @@ const skills = ref<Skill[]>([
     ],
   },
   {
-    title: "Mobile Development",
+    key: "mobile",
     icon: "pi pi-mobile",
     items: ["Ionic", "Java / Kotlin (Android)", "Responsive Layouts"],
   },
   {
-    title: "Project Management",
+    key: "pm",
     icon: "pi pi-chart-bar",
     items: ["Scrum", "Kanban", "Jira", "Trello", "ClickUp"],
   },

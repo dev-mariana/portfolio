@@ -1,6 +1,6 @@
 <template>
   <section id="about" class="about-section">
-    <h2>About Me</h2>
+    <h2>{{ $t("about.title") }}</h2>
     <Card class="about-card">
       <template #content>
         <div class="about-content">
@@ -9,11 +9,7 @@
           </div>
           <div class="about-info">
             <p class="about-intro">
-              I'm a software developer with over 6 years of experience,
-              currently focused on backend development. I specialize in building
-              reliable and scalable APIs with Node.js, TypeScript, and NestJS.
-              My background in frontend helps me understand full-stack needs and
-              collaborate efficiently with product teams.
+              {{ $t("about.intro") }}
             </p>
             <ul class="skill-list">
               <li><i class="pi pi-check"></i> JavaScript/TypeScript</li>
@@ -22,7 +18,7 @@
               <li><i class="pi pi-check"></i> Vue.js</li>
             </ul>
             <Button
-              label="Download Resume"
+              :label="$t('about.resume')"
               icon="pi pi-file"
               class="p-button-success"
               @click="downloadCV"

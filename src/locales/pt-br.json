@@ -1,0 +1,65 @@
+{
+  "navbar": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "skills": "Habilidades",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou a {name}.",
+    "subtitle": "Engenheira de Software - Back-End",
+    "description": "Eu arquiteto e implemento sistemas backend com foco em código limpo, escalabilidade e boas práticas de engenharia.",
+    "projects": "Projetos",
+    "contact": "Fale comigo"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "intro": "Sou desenvolvedora de software com mais de 6 anos de experiência, atualmente focada em desenvolvimento backend. Especialista em construir APIs confiáveis e escaláveis com Node.js, TypeScript e NestJS. Meu background em frontend me ajuda a entender as necessidades full-stack e colaborar de forma eficiente com times de produto.",
+    "resume": "Baixar Currículo"
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "details": "Ver Detalhes",
+    "viewAll": "Ver Todos os Projetos",
+    "list": {
+      "konsi": {
+        "title": "Consulta de Benefícios por CPF",
+        "description": "Um app simples para buscar e exibir benefícios vinculados a um CPF usando uma API externa."
+      },
+      "primo": {
+        "title": "Sistema de Transações Bancárias",
+        "description": "Um sistema bancário básico para gerenciar contas e transações."
+      },
+      "coopersystem": {
+        "title": "Busca de Repositórios de Usuários",
+        "description": "Uma aplicação frontend simples que busca repositórios de usuários no GitHub."
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades & Expertise",
+    "list": {
+      "backend": "Desenvolvimento Backend",
+      "frontend": "Desenvolvimento Frontend",
+      "tools": "Ferramentas & Testes",
+      "mobile": "Desenvolvimento Mobile",
+      "pm": "Gestão de Projetos"
+    }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "infoTitle": "Informações de Contato",
+    "email": "Email",
+    "location": "Localização",
+    "connect": "Conecte-se comigo",
+    "formTitle": "Envie uma Mensagem",
+    "name": "Nome",
+    "namePlaceholder": "Seu nome",
+    "emailPlaceholder": "seu@email.com",
+    "subject": "Assunto",
+    "subjectPlaceholder": "Assunto",
+    "message": "Mensagem",
+    "messagePlaceholder": "Sua mensagem...",
+    "send": "Enviar Mensagem"
+  }
+}

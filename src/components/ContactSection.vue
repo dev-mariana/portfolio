@@ -1,18 +1,18 @@
 <template>
   <section id="contact" class="contact-section">
-    <h2>Get In Touch</h2>
+    <h2>{{ $t("contact.title") }}</h2>
     <div class="contact-container">
       <div class="contact-info">
         <Card>
           <template #content>
-            <h3>Contact Information</h3>
+            <h3>{{ $t("contact.infoTitle") }}</h3>
             <div class="contact-details">
               <div class="contact-item">
                 <div class="contact-icon">
                   <i class="pi pi-envelope"></i>
                 </div>
                 <div class="contact-text">
-                  <h4>Email</h4>
+                  <h4>{{ $t("contact.email") }}</h4>
                   <a href="mailto:m.b.rodrigues1998@gmail.com"
                     >m.b.rodrigues1998@gmail.com</a
                   >
@@ -23,13 +23,13 @@
                   <i class="pi pi-map-marker"></i>
                 </div>
                 <div class="contact-text">
-                  <h4>Location</h4>
+                  <h4>{{ $t("contact.location") }}</h4>
                   <p>Brazil</p>
                 </div>
               </div>
             </div>
             <div class="social-section">
-              <h4>Connect with me</h4>
+              <h4>{{ $t("contact.connect") }}</h4>
               <div class="social-links">
                 <a
                   href="https://www.linkedin.com/in/dev-mariana/"
@@ -55,16 +55,16 @@
       <div class="contact-form">
         <Card>
           <template #content>
-            <h3 class="text-center">Send Me a Message</h3>
+            <h3 class="text-center">{{ $t("contact.formTitle") }}</h3>
             <form @submit.prevent="submitForm">
               <div class="form-group mb-4">
-                <label for="name">Name</label>
+                <label for="name">{{ $t("contact.name") }}</label>
                 <InputText
                   id="name"
                   v-model="form.name"
                   :class="{ 'p-invalid': errors.name }"
                   class="w-full"
-                  placeholder="Your name"
+                  :placeholder="$t('contact.namePlaceholder')"
                 />
                 <small v-if="errors.name" class="error-text">{{
                   errors.name
@@ -72,13 +72,13 @@
               </div>
 
               <div class="form-group mb-4">
-                <label for="email">Email</label>
+                <label for="email">{{ $t("contact.email") }}</label>
                 <InputText
                   id="email"
                   v-model="form.email"
                   :class="{ 'p-invalid': errors.email }"
                   class="w-full"
-                  placeholder="your@email.com"
+                  :placeholder="$t('contact.emailPlaceholder')"
                 />
                 <small v-if="errors.email" class="error-text">{{
                   errors.email
@@ -86,13 +86,13 @@
               </div>
 
               <div class="form-group mb-4">
-                <label for="subject">Subject</label>
+                <label for="subject">{{ $t("contact.subject") }}</label>
                 <InputText
                   id="subject"
                   v-model="form.subject"
                   :class="{ 'p-invalid': errors.subject }"
                   class="w-full"
-                  placeholder="Subject"
+                  :placeholder="$t('contact.subjectPlaceholder')"
                 />
                 <small v-if="errors.subject" class="error-text">{{
                   errors.subject
@@ -100,14 +100,14 @@
               </div>
 
               <div class="form-group mb-4">
-                <label for="message">Message</label>
+                <label for="message">{{ $t("contact.message") }}</label>
                 <Textarea
                   id="message"
                   v-model="form.message"
                   :class="{ 'p-invalid': errors.message }"
                   rows="5"
                   class="w-full"
-                  placeholder="Your message..."
+                  :placeholder="$t('contact.messagePlaceholder')"
                 />
                 <small v-if="errors.message" class="error-textarea">{{
                   errors.message
@@ -116,7 +116,7 @@
 
               <Button
                 type="submit"
-                label="Send Message"
+                :label="$t('contact.send')"
                 class="p-button-success w-full submit-button"
               />
             </form>

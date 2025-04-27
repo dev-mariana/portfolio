@@ -1,16 +1,20 @@
 <template>
   <section id="projects" class="projects-section">
-    <h2>Featured Projects</h2>
+    <h2>{{ $t("projects.title") }}</h2>
     <div class="projects-grid">
       <Card v-for="project in projects" :key="project.id" class="project-card">
         <template #header>
-          <img :src="project.image" :alt="project.title" class="project-img" />
+          <img :src="project.image" :alt="project.key" class="project-img" />
         </template>
         <template #title>
-          <div class="project-title">{{ project.title }}</div>
+          <div class="project-title">
+            {{ $t("projects.list." + project.key + ".title") }}
+          </div>
         </template>
         <template #content>
-          <p class="project-desc">{{ project.description }}</p>
+          <p class="project-desc">
+            {{ $t("projects.list." + project.key + ".description") }}
+          </p>
           <div class="tech-tags">
             <span
               v-for="tech in project.technologies"
@@ -21,7 +25,7 @@
           </div>
           <div class="project-links">
             <Button
-              label="View Details"
+              :label="$t('projects.details')"
               icon="pi pi-github"
               class="p-button-sm p-button-success"
               @click="openLink(project.repoUrl)"
@@ -32,7 +36,7 @@
     </div>
     <div class="view-all">
       <Button
-        label="View All Projects"
+        :label="$t('projects.viewAll')"
         icon="pi pi-arrow-right"
         iconPos="right"
         class="p-button-success"
@@ -52,8 +56,7 @@ const openLink = (url: string) => {
 
 interface Project {
   id: number;
-  title: string;
-  description: string;
+  key: string;
   image: string;
   technologies: string[];
   repoUrl: string;
@@ -62,9 +65,7 @@ interface Project {
 const projects = ref<Project[]>([
   {
     id: 1,
-    title: "Tax ID Benefits Lookup",
-    description:
-      "A simple app to search and display benefits linked to a tax ID (CPF) using an external API.",
+    key: "konsi",
     image:
       "https://miro.medium.com/v2/resize:fit:1400/1*5tJzgSzvi7xff-gmFGoxJw.png",
     technologies: [
@@ -79,9 +80,7 @@ const projects = ref<Project[]>([
   },
   {
     id: 2,
-    title: "Banking Transactions System",
-    description:
-      "A basic banking system for managing accounts and transactions.",
+    key: "primo",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAlm-KNR2iFOFp6Jnvh7pWqVIBroMLSGmvYQ&s",
     technologies: [
@@ -96,9 +95,7 @@ const projects = ref<Project[]>([
   },
   {
     id: 3,
-    title: "Users' Repositories Search",
-    description:
-      "A simple frontend application that searches users' repositories on GitHub.",
+    key: "coopersystem",
     image:
       "https://www.aceinfoway.com/blog/wp-content/uploads/2020/05/Latest-Features-in-Angular-10.jpg",
     technologies: [

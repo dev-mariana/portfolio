@@ -25,8 +25,10 @@
         ref="menuRef"
       >
         <ul>
-          <li v-for="item in navItems" :key="item.href">
-            <a :href="item.href" @click="closeMenu">{{ item.name }}</a>
+          <li v-for="item in navItems" :key="item.key">
+            <a :href="item.href" @click="closeMenu">{{
+              $t("navbar." + item.key)
+            }}</a>
           </li>
         </ul>
       </nav>
@@ -44,12 +46,12 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from "vue";
 
-const navItems = ref([
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
-]);
+const navItems = [
+  { key: "about", href: "#about" },
+  { key: "projects", href: "#projects" },
+  { key: "skills", href: "#skills" },
+  { key: "contact", href: "#contact" },
+];
 
 const isMenuOpen = ref(false);
 const isMobile = ref(false);
@@ -116,6 +118,7 @@ onBeforeUnmount(() => {
 nav {
   outline: none;
 }
+
 nav ul {
   display: flex;
   list-style: none;
@@ -123,9 +126,11 @@ nav ul {
   margin: 0;
   padding: 0;
 }
+
 nav ul li {
   margin: 0;
 }
+
 nav a {
   color: #fff;
   text-decoration: none;
@@ -134,6 +139,7 @@ nav a {
   border-radius: 6px;
   display: block;
 }
+
 nav a:hover {
   background: #4ade80;
   color: #121212;
@@ -151,6 +157,7 @@ nav a:hover {
   cursor: pointer;
   z-index: 40;
 }
+
 .hamburger .bar {
   display: block;
   width: 26px;
@@ -160,6 +167,7 @@ nav a:hover {
   border-radius: 2px;
   transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .hamburger .close-x {
   font-size: 1.8rem;
   color: #fff;
@@ -176,29 +184,33 @@ nav a:hover {
   z-index: 35;
 }
 
-/* Animations */
 .menu-slide-enter-active,
 .menu-slide-leave-active {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
 }
+
 .menu-slide-enter-from,
 .menu-slide-leave-to {
   transform: translateY(-30px);
   opacity: 0;
 }
+
 .menu-slide-enter-to,
 .menu-slide-leave-from {
   transform: translateY(0);
   opacity: 1;
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
+
 .fade-enter-to,
 .fade-leave-from {
   opacity: 1;
@@ -210,6 +222,7 @@ nav a:hover {
     width: 40px;
     height: 40px;
   }
+
   nav {
     position: fixed;
     top: 0;
@@ -225,12 +238,14 @@ nav a:hover {
     opacity: 1;
     pointer-events: auto;
   }
+
   nav ul {
     flex-direction: column;
     gap: 1.2rem;
     padding: 0 1.5rem;
     font-size: 1.1rem;
   }
+
   nav ul li a {
     padding: 1rem 0.5rem;
     text-align: center;

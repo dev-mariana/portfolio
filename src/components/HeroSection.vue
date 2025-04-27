@@ -1,20 +1,17 @@
 <template>
   <section class="hero-section">
     <div class="hero-content">
-      <h1>Hello, I'm <span class="highlight">Mariana</span>.</h1>
-      <p class="subtitle">Software Engineer - Back-End</p>
-      <p class="description">
-        I architect and implement backend systems with a focus on clean code,
-        scalability, and engineering best practices.
-      </p>
+      <h1>{{ $t("hero.greeting", { name: "Mariana" }) }}</h1>
+      <p class="subtitle">{{ $t("hero.subtitle") }}</p>
+      <p class="description">{{ $t("hero.description") }}</p>
       <div class="cta-buttons">
         <Button
-          label="Projects"
+          :label="$t('hero.projects')"
           class="p-button-success view-work-btn"
           @click="navigateToProjects"
         />
         <Button
-          label="Contact Me"
+          :label="$t('hero.contact')"
           class="p-button-outlined contact-btn"
           @click="navigateToContact"
         />

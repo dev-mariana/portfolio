@@ -1,0 +1,65 @@
+{
+  "navbar": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm {name}.",
+    "subtitle": "Software Engineer - Back-End",
+    "description": "I architect and implement backend systems with a focus on clean code, scalability, and engineering best practices.",
+    "projects": "Projects",
+    "contact": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I'm a software developer with over 6 years of experience, currently focused on backend development. I specialize in building reliable and scalable APIs with Node.js, TypeScript, and NestJS. My background in frontend helps me understand full-stack needs and collaborate efficiently with product teams.",
+    "resume": "Download Resume"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "details": "View Details",
+    "viewAll": "View All Projects",
+    "list": {
+      "konsi": {
+        "title": "Tax ID Benefits Lookup",
+        "description": "A simple app to search and display benefits linked to a tax ID (CPF) using an external API."
+      },
+      "primo": {
+        "title": "Banking Transactions System",
+        "description": "A basic banking system for managing accounts and transactions."
+      },
+      "coopersystem": {
+        "title": "Users' Repositories Search",
+        "description": "A simple frontend application that searches users' repositories on GitHub."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "list": {
+      "backend": "Backend Development",
+      "frontend": "Frontend Development",
+      "tools": "Tools & Testing",
+      "mobile": "Mobile Development",
+      "pm": "Project Management"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "infoTitle": "Contact Information",
+    "email": "Email",
+    "location": "Location",
+    "connect": "Connect with me",
+    "formTitle": "Send Me a Message",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Subject",
+    "message": "Message",
+    "messagePlaceholder": "Your message...",
+    "send": "Send Message"
+  }
+}
