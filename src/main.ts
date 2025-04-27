@@ -10,13 +10,13 @@ import en from "./locales/en.json";
 import ptbr from "./locales/pt-br.json";
 
 const i18n = createI18n({
-  legacy: false,
-  locale: "pt-br",
+  locale: navigator.language,
   fallbackLocale: "en",
   messages: {
-    "pt-br": ptbr,
     en,
+    "pt-br": ptbr,
   },
+  legacy: false,
 });
 
 const app = createApp(App);
