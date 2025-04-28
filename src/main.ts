@@ -7,14 +7,14 @@ import { createI18n } from "vue-i18n";
 import App from "./App.vue";
 import "./assets/main.css";
 import en from "./locales/en.json";
-import ptbr from "./locales/pt-br.json";
+import ptBR from "./locales/pt-br.json";
 
 const i18n = createI18n({
   locale: navigator.language,
   fallbackLocale: "en",
   messages: {
     en,
-    "pt-br": ptbr,
+    "pt-BR": ptBR,
   },
   legacy: false,
 });
