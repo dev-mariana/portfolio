@@ -49,6 +49,7 @@ const navigateToContact = () => scrollToSection("contact");
   justify-content: center;
   text-align: center;
   padding: 3rem 1rem 0;
+  margin-bottom: 14rem;
 }
 
 .hero-content {
@@ -143,8 +144,12 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    margin-bottom: 8rem;
+  }
+
   .scroll-indicator {
-    top: 38rem;
+    top: 44rem;
   }
 }
 </style>
