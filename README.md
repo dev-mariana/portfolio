@@ -120,4 +120,4 @@ MIT
 
 ## Credits
 
-Created by [Your Name](https://github.com/your-username).
+Created by [Your Name](https://github.com/dev-mariana).
