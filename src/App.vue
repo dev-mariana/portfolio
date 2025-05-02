@@ -25,5 +25,8 @@ import SkillsSection from "./components/SkillsSection.vue";
   background-color: #121212;
   color: #ffffff;
   min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 </style>
