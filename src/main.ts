@@ -9,7 +9,6 @@ import {
   ToastService,
 } from "primevue";
 import PrimeVue from "primevue/config";
-// import "primevue/resources/primevue.min.css";
 import { createApp } from "vue";
 import { createI18n } from "vue-i18n";
 import App from "./App.vue";
