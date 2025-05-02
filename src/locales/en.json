@@ -55,7 +55,7 @@
     "formTitle": "Send Me a Message",
     "name": "Name",
     "namePlaceholder": "Your name",
-    "emailPlaceholder": "your@email.com",
+    "emailPlaceholder": "Email",
     "subject": "Subject",
     "subjectPlaceholder": "Subject",
     "message": "Message",

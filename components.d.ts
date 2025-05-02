@@ -9,15 +9,10 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AboutSection: typeof import('./src/components/AboutSection.vue')['default']
-    Button: typeof import('primevue/button')['default']
-    Card: typeof import('primevue/card')['default']
     ContactSection: typeof import('./src/components/ContactSection.vue')['default']
     HeroSection: typeof import('./src/components/HeroSection.vue')['default']
-    InputText: typeof import('primevue/inputtext')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     ProjectsSection: typeof import('./src/components/ProjectsSection.vue')['default']
     SkillsSection: typeof import('./src/components/SkillsSection.vue')['default']
-    Textarea: typeof import('primevue/textarea')['default']
-    Toast: typeof import('primevue/toast')['default']
   }
 }

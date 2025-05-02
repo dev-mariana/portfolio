@@ -1,7 +1,15 @@
 import Aura from "@primeuix/themes/aura";
 import "primeicons/primeicons.css";
-import { ToastService } from "primevue";
+import {
+  Button,
+  Card,
+  InputText,
+  Textarea,
+  Toast,
+  ToastService,
+} from "primevue";
 import PrimeVue from "primevue/config";
+// import "primevue/resources/primevue.min.css";
 import { createApp } from "vue";
 import { createI18n } from "vue-i18n";
 import App from "./App.vue";
@@ -29,5 +37,11 @@ app.use(PrimeVue, {
 
 app.use(ToastService);
 app.use(i18n);
+
+app.component("Card", Card);
+app.component("InputText", InputText);
+app.component("Textarea", Textarea);
+app.component("Button", Button);
+app.component("Toast", Toast);
 
 app.mount("#app");

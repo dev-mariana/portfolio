@@ -133,6 +133,11 @@
 <script setup lang="ts">
 import { init, send } from "@emailjs/browser";
 import { useToast } from "primevue";
+import Button from "primevue/button";
+import Card from "primevue/card";
+import InputText from "primevue/inputtext";
+import Textarea from "primevue/textarea";
+import Toast from "primevue/toast";
 import { reactive } from "vue";
 
 interface FormData {
@@ -142,12 +147,7 @@ interface FormData {
   message: string;
 }
 
-interface FormErrors {
-  name?: string;
-  email?: string;
-  subject?: string;
-  message?: string;
-}
+interface FormErrors extends Partial<FormData> {}
 
 const form = reactive<FormData>({
   name: "",
@@ -159,18 +159,28 @@ const form = reactive<FormData>({
 const errors = reactive<FormErrors>({});
 const toast = useToast();
 
-const validateEmail = (email: string): boolean => {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-};
+function resetForm() {
+  form.name = "";
+  form.email = "";
+  form.subject = "";
+  form.message = "";
+}
 
-const validateForm = (): boolean => {
-  let isValid = true;
-
+function resetErrors() {
   errors.name = undefined;
   errors.email = undefined;
   errors.subject = undefined;
   errors.message = undefined;
+}
+
+function validateEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validateForm(): boolean {
+  resetErrors();
+
+  let isValid = true;
 
   if (!form.name.trim()) {
     errors.name = "Name is required";
@@ -196,53 +206,46 @@ const validateForm = (): boolean => {
   }
 
   return isValid;
-};
+}
 
-const submitForm = async () => {
-  if (validateForm()) {
+async function submitForm() {
+  if (!validateForm()) return;
+
+  try {
     await sendEmail(form);
 
-    console.log("Form submitted:", form);
+    toast.add({
+      severity: "success",
+      summary: "Success",
+      detail: "Your message was sent!",
+    });
 
-    form.name = "";
-    form.email = "";
-    form.subject = "";
-    form.message = "";
+    resetForm();
+  } catch (error) {
+    toast.add({
+      severity: "error",
+      summary: "Error",
+      detail: "Failed to send email. Please try again later.",
+    });
+
+    console.error("Error sending email:", error);
   }
-};
+}
 
-const sendEmail = async (form: FormData) => {
+async function sendEmail(form: FormData) {
   const apiKey = import.meta.env.VITE_API_KEY;
   const serviceId = import.meta.env.VITE_SERVICE_ID;
   const templateId = import.meta.env.VITE_TEMPLATE_ID;
 
   init(apiKey);
 
-  await send(serviceId, templateId, {
+  return send(serviceId, templateId, {
     name: form.name,
     email: form.email,
     subject: form.subject,
     message: form.message,
-  })
-    .then((response) => {
-      toast.add({
-        severity: "success",
-        summary: "Success",
-        detail: "Your message was sent!",
-      });
-
-      console.log("Email sent successfully:", response);
-    })
-    .catch((error) => {
-      toast.add({
-        severity: "error",
-        summary: "Error",
-        detail: "Failed to send email. Please try again later.",
-      });
-
-      console.error("Error sending email:", error);
-    });
-};
+  });
+}
 </script>
 
 <style scoped>
