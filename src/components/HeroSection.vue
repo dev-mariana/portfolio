@@ -149,7 +149,7 @@ h1 {
   }
 
   .scroll-indicator {
-    top: 44rem;
+    top: 38rem;
   }
 }
 </style>
