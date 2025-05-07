@@ -7,9 +7,7 @@ Showcase your skills, projects, and contact information with a beautiful UI and 
 
 ## Demo
 
-![Screenshot of the portfolio homepage](https://github.com/dev-mariana/portfolio/src/assets/screenshot.png)
-
-> _Add a link or screenshot here if deployed!_
+![](https://github.com/dev-mariana/portfolio/src/assets/screenshot.png)
 
 ---
 
