@@ -5,6 +5,14 @@ Showcase your skills, projects, and contact information with a beautiful UI and 
 
 ---
 
+## Demo
+
+![Screenshot of the portfolio homepage](https://github.com/dev-mariana/portfolio/src/assets/screenshot.png)
+
+> _Add a link or screenshot here if deployed!_
+
+---
+
 ## Features
 
 - **Vue 3 + TypeScript + Vite**: Modern, type-safe codebase.
@@ -14,12 +22,6 @@ Showcase your skills, projects, and contact information with a beautiful UI and 
 - **Contact Form**: EmailJS integration for direct contact.
 - **Sectioned Layout**: Hero, About, Projects, Skills, and Contact sections.
 - **Easy Customization**: Update your info, projects, and styles easily.
-
----
-
-## Demo
-
-> _Add a link or screenshot here if deployed!_
 
 ---
 
