@@ -5,9 +5,6 @@ Showcase your skills, projects, and contact information with a beautiful UI and 
 
 ---
 
-## Demo
-
-
 ![](https://github.com/dev-mariana/portfolio/blob/main/src/assets/screenshot.png)
 
 ---
