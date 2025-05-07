@@ -1,7 +1,7 @@
 # Dev Portfolio
 
 A modern, responsive developer portfolio built with **Vue 3**, **TypeScript**, **Vite**, and **PrimeVue**.  
-Showcase your skills, projects, and contact information with a beautiful UI and multi-language support (English & Brazilian Portuguese).
+Showcase my skills, projects, and contact information with a beautiful UI and multi-language support (English & Brazilian Portuguese).
 
 ---
 
