@@ -99,6 +99,7 @@ h2 {
 .skill-list li {
   display: flex;
   align-items: center;
+  color: #ffffff;
 }
 
 .skill-list i {
