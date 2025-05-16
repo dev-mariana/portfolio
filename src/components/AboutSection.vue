@@ -109,7 +109,7 @@ h2 {
 
 @media (max-width: 768px) {
   .about-section {
-    margin-top: 8rem;
+    margin-top: 12rem;
   }
 
   .about-content {
