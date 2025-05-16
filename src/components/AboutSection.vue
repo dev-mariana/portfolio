@@ -84,6 +84,7 @@ h2 {
 .about-intro {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  color: #ffffff;
 }
 
 .skill-list {

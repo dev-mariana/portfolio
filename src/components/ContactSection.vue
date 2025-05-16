@@ -252,11 +252,14 @@ async function sendEmail(form: FormData) {
 .contact-section {
   padding: 5rem 2rem;
   background-color: #0f0f0f;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
   text-align: center;
   color: #4ade80;
 }
@@ -267,66 +270,77 @@ h2 {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.contact-info {
+  width: 100%;
+  max-width: 100%;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 100%;
 }
 
 :deep(.p-card) {
   background-color: #1e1e1e !important;
   color: #ffffff !important;
   border: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
   color: #ffffff;
 }
 
 .contact-details {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .contact-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background-color: #2a2a2a;
   border-radius: 50%;
-  margin-right: 1rem;
+  margin-right: 0.8rem;
   flex-shrink: 0;
 }
 
 .contact-icon i {
   color: #4ade80;
-  font-size: 1.25rem;
-}
-
-.contact-text h4 {
-  margin: 0 0 0.25rem 0;
-  color: #4ade80;
   font-size: 1rem;
 }
 
-.contact-text a {
+.contact-text h4 {
+  margin: 0 0 0.2rem 0;
+  color: #4ade80;
+  font-size: 0.85rem;
+}
+
+.contact-text a,
+.contact-text p {
+  font-size: 0.9rem;
+  margin: 0;
   color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .contact-text a:hover {
   color: #4ade80;
-}
-
-.contact-text p {
-  margin: 0;
-  color: #ffffff;
 }
 
 .social-section {
@@ -336,9 +350,9 @@ h3 {
 }
 
 .social-section h4 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.8rem 0;
   color: #4ade80;
-  font-size: 1rem;
+  font-size: 0.85rem;
 }
 
 .social-links {
@@ -364,18 +378,9 @@ h3 {
   color: #121212;
 }
 
-.error-text {
-  color: #ff6b6b;
-  display: block;
-  margin-top: 4px;
-  margin-bottom: 1rem;
-}
-
+.error-text,
 .error-textarea {
-  color: #ff6b6b;
-  display: block;
-  margin-top: 0px;
-  margin-bottom: 1rem;
+  font-size: 0.8rem;
 }
 
 .form-group {
@@ -388,7 +393,8 @@ h3 {
 .form-group label {
   color: #ffffff;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .mb-4 {
@@ -415,8 +421,24 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+
   .contact-container {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -426,6 +448,7 @@ h3 {
 
 :deep(.p-inputtext),
 :deep(.p-inputtextarea) {
-  padding: 0.75rem 1rem !important;
+  padding: 0.6rem 0.8rem !important;
+  font-size: 0.9rem !important;
 }
 </style>
