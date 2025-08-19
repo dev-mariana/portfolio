@@ -33,6 +33,10 @@
       "coopersystem": {
         "title": "Busca de Repositórios de Usuários",
         "description": "Uma aplicação frontend simples que busca repositórios de usuários no GitHub."
+      },
+      "task-tracker": {
+        "title": "Task Tracker",
+        "description": "Uma aplicação simples de rastreamento de tarefas construída com Dart e Vaden Framework."
       }
     }
   },

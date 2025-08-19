@@ -107,6 +107,13 @@ const projects = ref<Project[]>([
     ],
     repoUrl: "https://github.com/dev-mariana/desafio-coopersystem",
   },
+  {
+    id: 4,
+    key: "task-tracker",
+    image: "https://doc.vaden.dev/img/vaden-social-card.jpg",
+    technologies: ["Dart", "Vaden Framework", "Dio", "UUID", "Collection"],
+    repoUrl: "https://github.com/dev-mariana/task_tracker",
+  },
 ]);
 </script>
 
