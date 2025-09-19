@@ -20,7 +20,7 @@
   "projects": {
     "title": "Projetos em Destaque",
     "details": "Ver Detalhes",
-    "viewAll": "Ver Todos os Projetos",
+    "viewMore": "Ver Mais Projetos",
     "list": {
       "konsi": {
         "title": "Consulta de Benefícios por CPF",
@@ -65,5 +65,45 @@
     "message": "Mensagem",
     "messagePlaceholder": "Sua mensagem...",
     "send": "Enviar Mensagem"
+  },
+  "moreProjects": {
+    "title": "Mais Projetos",
+    "subtitle": "Explore mais projetos do meu portfólio de desenvolvimento",
+    "searchPlaceholder": "Buscar projetos ou tecnologias...",
+    "noResults": "Nenhum projeto encontrado",
+    "noResultsDesc": "Tente ajustar seus filtros ou termo de busca",
+    "viewProject": "Ver Projeto",
+    "viewCode": "Ver Código",
+    "viewDemo": "Ver Demo",
+    "backToHome": "Voltar ao Início",
+    "categories": {
+      "all": "Todos",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "mobile": "Mobile",
+      "fullstack": "Full Stack"
+    },
+    "list": {
+      "konsi": {
+        "title": "Consulta de Benefícios por CPF",
+        "description": "Um app simples para buscar e exibir benefícios vinculados a um CPF usando uma API externa."
+      },
+      "primo": {
+        "title": "Sistema de Transações Bancárias",
+        "description": "Um sistema bancário básico para gerenciar contas e transações."
+      },
+      "coopersystem": {
+        "title": "Busca de Repositórios de Usuários",
+        "description": "Uma aplicação frontend simples que busca repositórios de usuários no GitHub."
+      },
+      "task-tracker": {
+        "title": "Task Tracker",
+        "description": "Uma aplicação simples de rastreamento de tarefas construída com Dart e Vaden Framework."
+      },
+      "users-crud": {
+        "title": "Sistema CRUD de Usuários",
+        "description": "API completa para gerenciamento de usuários com autenticação JWT e MongoDB."
+      }
+    }
   }
 }

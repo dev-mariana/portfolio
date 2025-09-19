@@ -20,7 +20,7 @@
   "projects": {
     "title": "Featured Projects",
     "details": "View Details",
-    "viewAll": "View All Projects",
+    "viewMore": "View More Projects",
     "list": {
       "konsi": {
         "title": "Tax ID Benefits Lookup",
@@ -65,5 +65,45 @@
     "message": "Message",
     "messagePlaceholder": "Your message...",
     "send": "Send Message"
+  },
+  "moreProjects": {
+    "title": "More Projects",
+    "subtitle": "Explore more projects from my development portfolio",
+    "searchPlaceholder": "Search projects or technologies...",
+    "noResults": "No projects found",
+    "noResultsDesc": "Try adjusting your filters or search term",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "viewDemo": "View Demo",
+    "backToHome": "Back to Home",
+    "categories": {
+      "all": "All",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "mobile": "Mobile",
+      "fullstack": "Full Stack"
+    },
+    "list": {
+      "konsi": {
+        "title": "Tax ID Benefits Lookup",
+        "description": "A simple app to search and display benefits linked to a tax ID (CPF) using an external API."
+      },
+      "primo": {
+        "title": "Banking Transactions System",
+        "description": "A basic banking system for managing accounts and transactions."
+      },
+      "coopersystem": {
+        "title": "Users' Repositories Search",
+        "description": "A simple frontend application that searches users' repositories on GitHub."
+      },
+      "task-tracker": {
+        "title": "Task Tracker",
+        "description": "A simple task tracker application built with Dart and Vaden Framework."
+      },
+      "users-crud": {
+        "title": "Users CRUD System",
+        "description": "Complete API for user management with JWT authentication and MongoDB."
+      }
+    }
   }
 }

@@ -11,6 +11,7 @@ declare module 'vue' {
     AboutSection: typeof import('./src/components/AboutSection.vue')['default']
     ContactSection: typeof import('./src/components/ContactSection.vue')['default']
     HeroSection: typeof import('./src/components/HeroSection.vue')['default']
+    MoreProjectsPage: typeof import('./src/components/MoreProjectsPage.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     ProjectsSection: typeof import('./src/components/ProjectsSection.vue')['default']
     SkillsSection: typeof import('./src/components/SkillsSection.vue')['default']

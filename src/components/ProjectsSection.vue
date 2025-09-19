@@ -34,12 +34,13 @@
         </template>
       </Card>
     </div>
-    <div class="view-all">
+    <div class="view-more">
       <Button
-        :label="$t('projects.viewAll')"
+        :label="$t('projects.viewMore')"
         icon="pi pi-arrow-right"
         iconPos="right"
         class="p-button-success"
+        @click="emit('view-more-projects')"
       />
     </div>
   </section>
@@ -49,6 +50,10 @@
 import Button from "primevue/button";
 import Card from "primevue/card";
 import { ref } from "vue";
+
+const emit = defineEmits<{
+  "view-more-projects": [];
+}>();
 
 const openLink = (url: string) => {
   window.open(url, "_blank");
@@ -186,7 +191,7 @@ h2 {
   margin-top: 1rem;
 }
 
-.view-all {
+.view-more {
   margin-top: 3rem;
   text-align: center;
 }
