@@ -231,6 +231,16 @@ const projects = ref<Project[]>([
     category: "backend",
     year: "2025",
   },
+  {
+    id: 6,
+    key: "task-manager-api",
+    image:
+      "https://deku.posstree.com/assets/images/category/golang/gin/background.jpg",
+    technologies: ["Go", "Gin", "PostgreSQL", "GORM", "Docker", "Swagger"],
+    repoUrl: "https://github.com/dev-mariana/task-manager-api",
+    category: "backend",
+    year: "2025",
+  },
 ]);
 
 const filteredProjects = computed(() => {

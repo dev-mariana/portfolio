@@ -103,6 +103,10 @@
       "users-crud": {
         "title": "Users CRUD System",
         "description": "Complete API for user management with JWT authentication and MongoDB."
+      },
+      "task-manager-api": {
+        "title": "Task Manager API",
+        "description": "A RESTful API built with Go and Gin framework for managing tasks."
       }
     }
   }
